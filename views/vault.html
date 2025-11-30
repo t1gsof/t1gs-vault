@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T1GS Vault</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSRF-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/css/glass.css" rel="stylesheet">
+</head>
+<body class="flex flex-col md:flex-row h-screen overflow-hidden text-slate-200">
+    
+    <aside class="vault-sidebar w-full md:w-72 flex-shrink-0 flex flex-col justify-between p-6 z-20 overflow-y-auto">
+        <div>
+            <div class="flex items-center gap-3 mb-8 font-bold text-xl tracking-tight text-white group cursor-default">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-all duration-300">
+                    <img src="/images/logo.png" alt="Logo" class="w-6 h-6 object-contain">
+                </div>
+                <span>T1GS Vault</span>
+            </div>
+            
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-2">Passwords</div>
+            
+            <nav class="space-y-1 mb-8">
+                <a href="#" data-category="all" class="nav-category flex items-center gap-3 px-4 py-2.5 rounded-lg bg-violet-600/10 text-violet-400 text-sm font-medium border border-violet-600/10 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    All Passwords
+                </a>
+            </nav>
+
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-2">Categories</div>
+
+            <nav class="space-y-1">
+                <a href="#" data-category="web" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Web Logins
+                </a>
+                <a href="#" data-category="card" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="22" height="14" x="1" y="4" rx="2" ry="2"/><line x1="1" x2="23" y1="10" y2="10"/></svg>
+                    Credit Cards
+                </a>
+                <a href="#" data-category="id" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Identity Documents
+                </a>
+                <a href="#" data-category="note" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    Notes
+                </a>
+                <a href="#" data-category="social" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    Social Media
+                </a>
+                <a href="#" data-category="email" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Email Accounts
+                </a>
+                <a href="#" data-category="wifi" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" x2="12.01" y1="20" y2="20"/></svg>
+                    WiFi Passwords
+                </a>
+                <a href="#" data-category="bank" class="nav-category flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-sm border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21v-7"/><path d="M19 21v-7"/><path d="M4 10a5 5 0 0 1 16 0"/><path d="M12 14v7"/></svg>
+                    Bank Accounts
+                </a>
+            </nav>
+        </div>
+
+        <div class="mt-auto space-y-4">
+            <div class="flex items-center justify-between px-4 py-2 rounded-lg bg-slate-800/30 border border-slate-700/50">
+                <div class="flex items-center gap-2 text-sm text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                    Stealth Mode
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="stealth_mode_toggle" class="sr-only peer">
+                    <div class="w-9 h-5 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-500/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
+                </label>
+            </div>
+
+            <form action="/logout" method="POST">
+                 <input type="hidden" name="_csrf" id="logoutCsrf">
+                 <script>
+                     window.addEventListener('load', () => {
+                         const meta = document.querySelector('meta[name="csrf-token"]');
+                         if(meta) document.getElementById('logoutCsrf').value = meta.getAttribute('content');
+                     });
+                 </script>
+                <button type="submit" class="w-full btn-secondary rounded-lg py-2.5 text-sm flex items-center justify-center gap-2 font-medium hover:border-red-500/30 hover:bg-red-500/10 hover:text-red-200 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                    Log Out
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-full relative overflow-hidden bg-gradient-to-br from-[#020617] to-[#0f172a]">
+        
+        <header class="h-16 border-b border-slate-800/60 flex items-center justify-between px-8 bg-slate-900/40 backdrop-blur-md z-10">
+            <div class="text-sm text-slate-400">Welcome back, <span id="userWelcome" class="text-white font-medium">User</span></div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="16.65" y2="16.65"/></svg>
+                    <input id="searchInput" aria-label="Search vault" type="text" placeholder="Search vault..." class="bg-slate-800/50 border border-slate-700 rounded-full pl-9 pr-4 py-1.5 text-sm text-slate-200 focus:outline-none focus:border-violet-500/50 w-48 transition-all">
+                </div>
+                
+                <button id="addBtn" class="btn-primary rounded-lg px-4 py-1.5 text-sm flex items-center gap-2 shadow-lg shadow-violet-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    Add Key
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-8 relative">
+            
+            <div id="addPanel" class="glass-panel rounded-xl p-6 mb-8 hidden animate-fade-in border-violet-500/20 shadow-xl shadow-violet-900/10">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="panelTitle" class="text-lg font-medium text-white flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-violet-500"></div>
+                        Add New Item
+                    </h3>
+                    <button id="closePanelBtn" class="text-slate-500 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-lg">✕</button>
+                </div>
+                <form id="addForm" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 mb-2">
+                         <label for="catInput" class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Category</label>
+                         <select id="catInput" name="category" class="input-field w-full rounded-lg px-4 py-2.5 text-sm">
+                             <option value="web">Web Logins</option>
+                             <option value="card">Credit Cards</option>
+                             <option value="id">Identity Documents</option>
+                             <option value="note">Notes</option>
+                             <option value="social">Social Media</option>
+                             <option value="email">Email Accounts</option>
+                             <option value="wifi">WiFi Passwords</option>
+                             <option value="bank">Bank Accounts</option>
+                         </select>
+                    </div>
+
+                    <div class="md:col-span-5">
+                        <label for="url" class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1.5 ml-1">URL / Title</label>
+                        <input id="url" name="url" type="text" placeholder="e.g. Google or Visa Card" required class="input-field w-full rounded-lg px-4 py-2.5 text-sm">
+                    </div>
+                    <div class="md:col-span-3">
+                        <label for="uName" class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Username / Number</label>
+                        <input id="uName" name="username" type="text" placeholder="Login" required class="input-field w-full rounded-lg px-4 py-2.5 text-sm">
+                    </div>
+                    <div class="md:col-span-3">
+                        <label for="pwd" class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Password / Pin</label>
+                        <input id="pwd" name="password" type="password" placeholder="Secure Password" required class="input-field w-full rounded-lg px-4 py-2.5 text-sm">
+                    </div>
+                    <div class="md:col-span-1 flex items-end">
+                        <button id="saveBtn" type="submit" class="btn-primary w-full h-[42px] rounded-lg text-sm flex items-center justify-center bg-violet-600 hover:bg-violet-700">Save</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="vaultList" class="space-y-3"></div>
+            
+        </div>
+    </main>
+
+    <script src="/js/client.js"></script>
+</body>
+</html>
